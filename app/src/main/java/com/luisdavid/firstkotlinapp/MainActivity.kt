@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
+
+        val resetButton: Button = findViewById(R.id.reset_button)
+        resetButton.setOnClickListener { resetDice() }
     }
 
     private fun rollDice() {
@@ -22,5 +25,10 @@ class MainActivity : AppCompatActivity() {
         // resultText.text = "Dice Rolled!"
         val randomInt = (1..6).random()
         resultText.text = randomInt.toString()
+    }
+
+    private fun resetDice() {
+        val resultText: TextView = findViewById(R.id.result_text)
+        resultText.text = "0"
     }
 }
